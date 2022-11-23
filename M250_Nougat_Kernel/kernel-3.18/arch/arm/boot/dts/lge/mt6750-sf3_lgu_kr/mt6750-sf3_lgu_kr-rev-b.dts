@@ -1,0 +1,81 @@
+
+/dts-v1/;
+
+#include "../muse6750_hdk_n_lge.dtsi"
+
+#include "../mt6750-common.dtsi"
+#include "mt6750-sf3_lgu_kr-power.dtsi"
+#include "mt6750-sf3_lgu_kr-panel.dtsi"
+#include "mt6750-sf3_lgu_kr-touch.dtsi"
+#include "mt6750-sf3_lgu_kr-sensor.dtsi"
+#include "mt6750-sf3_lgu_kr-fingerprint.dtsi"
+#include "mt6750-sf3_lgu_kr-misc.dtsi"
+#include "mt6750-sf3_lgu_kr-sound.dtsi"
+#include "mt6750-sf3_lgu_kr-nfc.dtsi"
+#include "mt6750-sf3_lgu_kr-common.dtsi"
+#include "mt6750-sf3_lgu_kr-usb.dtsi"
+#include "mt6750-sf3_lgu_kr-tdmb.dtsi"
+#include "mt6750-sf3_lgu_kr-camera.dtsi"
+
+/ {
+	/*
+	typedef enum {
+		HW_REV_0 = 0,
+		HW_REV_0_1,
+		HW_REV_A,
+		HW_REV_B,
+		HW_REV_C,
+		HW_REV_1_0,
+		HW_REV_1_1,
+		HW_REV_MAX
+	} rev_type;
+	*/
+	lge,pcb_revision = <0x3>; // rev_b
+};
+
+&i2c1 {
+	cust_accel@68 {
+		compatible = "mediatek,bmi160_acc";
+		direction = <5>;
+	};
+
+	cust_gyro@69 {
+		compatible = "mediatek,bmi160_gyro";
+		direction = <5>;
+	};
+
+	cust_mag@c {
+		direction = <6>;
+	};
+
+	/delete-node/ rt9460_charger@25;
+};
+
+&i2c3 {
+	rt9460_charger@25 {
+		status = "okay";
+		compatible = "rt,rt9460";
+		reg = <0x25>;
+		interrupt-parent = <&eintc>;
+		interrupts = <8 0x2002>;
+		debounce = <8 0>;
+		rt,irq_gpio = <&pio 8 0x2002>;
+		rt,te_en;
+		rt,iinlm_sel = <2>;
+		rt,iprec = <2>;
+		rt,ieoc = <2>;
+		rt,deadbat = <8>;
+		rt,vprec = <2>;
+		rt,voreg = <35>;
+		rt,icc = <3125>;
+		rt,aicr = <1200>;
+		rt,chg_volt = <4400>;
+		rt,bst_volt = <5000>;
+	};
+};
+
+//&i2c3 {
+//	cust_mag@c {
+//		direction = <6>;
+//	};
+//};

@@ -1,0 +1,16 @@
+################### DIFF with debug_defconfig from here  ###################
+# CONFIG_SLUB_DEBUG is not set
+# CONFIG_DEBUG_RODATA is not set
+# CONFIG_DEVMEM is not set
+# CONFIG_DEVKMEM is not set
+# CONFIG_FUSE_IO_LOG is not set
+CONFIG_MAGIC_SYSRQ=y
+CONFIG_PANIC_TIMEOUT=1
+# CONFIG_DEBUG_PREEMPT is not set
+# CONFIG_DEBUG_BUGVERBOSE is not set
+# CONFIG_MTK_LOCK_DEBUG is not set
+# CONFIG_MTK_MLOG is not set
+# CONFIG_MT_PRINTK_UART_CONSOLE is not set
+# CONFIG_MT_BOOT_TIME_CPU_BOOST is not set
+# CONFIG_SCHED_DEBUG is not set
+# CONFIG_UEVENT_HELPER is not set

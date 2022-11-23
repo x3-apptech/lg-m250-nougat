@@ -1,0 +1,40 @@
+
+/dts-v1/;
+
+#include "../muse6750_hdk_n_lge.dtsi"
+
+#include "mt6750-lgps32-power.dtsi"
+#include "mt6750-lgps32-panel.dtsi"
+#include "mt6750-lgps32-touch.dtsi"
+#include "mt6750-lgps32-sensor.dtsi"
+#include "mt6750-lgps32-misc.dtsi"
+#include "mt6750-lgps32-sound.dtsi"
+#include "mt6750-lgps32-common.dtsi"
+#include "../mt6750-common.dtsi"
+
+/ {
+	/*
+	typedef enum {
+		HW_REV_0 = 0,
+		HW_REV_0_1,
+		HW_REV_A,
+		HW_REV_B,
+		HW_REV_C,
+		HW_REV_1_0,
+		HW_REV_1_1,
+		HW_REV_MAX
+	} rev_type;
+	*/
+	lge,pcb_revision = <0x0>; // rev_0
+};
+
+&i2c1 {
+	cust_accel@11 {
+		direction = <0>;
+	};
+
+	cust_mag@13 {
+		direction = <0>;
+	};
+};
+

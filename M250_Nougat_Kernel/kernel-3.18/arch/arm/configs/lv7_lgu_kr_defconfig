@@ -1,0 +1,3 @@
+include lv7_common_defconfig
+include lv7_user_defconfig
+include lv7_lgu_kr_common_defconfig

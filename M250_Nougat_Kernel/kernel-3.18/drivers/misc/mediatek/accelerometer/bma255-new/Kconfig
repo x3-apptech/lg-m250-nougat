@@ -1,0 +1,15 @@
+config MTK_BMA255_INT_ENABLE
+	bool "BMA255 intterupt enable config"
+	default n
+	help
+	  If this option is set,
+	  it will support
+	  BMA255 Interrupt function.
+config MTK_BMA255_NEW
+	bool "BMA255 for MediaTek package"
+	default n
+	help
+	  It support different accelerometer sensor.
+	  If this option is set,
+	  it will support
+	  BMA255 Accelerometer in BMC150.

@@ -1,0 +1,56 @@
+
+/dts-v1/;
+
+#include "../muse6750_hdk_n_lge.dtsi"
+
+#include "../mt6750-common.dtsi"
+#include "mt6750-sf3_lgu_kr-power.dtsi"
+#include "mt6750-sf3_lgu_kr-panel.dtsi"
+#include "mt6750-sf3_lgu_kr-touch.dtsi"
+#include "mt6750-sf3_lgu_kr-sensor.dtsi"
+#include "mt6750-sf3_lgu_kr-fingerprint.dtsi"
+#include "mt6750-sf3_lgu_kr-misc.dtsi"
+#include "mt6750-sf3_lgu_kr-sound.dtsi"
+#include "mt6750-sf3_lgu_kr-nfc.dtsi"
+#include "mt6750-sf3_lgu_kr-common.dtsi"
+#include "mt6750-sf3_lgu_kr-usb.dtsi"
+#include "mt6750-sf3_lgu_kr-tdmb.dtsi"
+#include "mt6750-sf3_lgu_kr-camera.dtsi"
+
+/ {
+	/*
+	typedef enum {
+		HW_REV_0 = 0,
+		HW_REV_0_1,
+		HW_REV_A,
+		HW_REV_B,
+		HW_REV_C,
+		HW_REV_1_0,
+		HW_REV_1_1,
+		HW_REV_MAX
+	} rev_type;
+	*/
+	lge,pcb_revision = <0x2>; // rev_a
+};
+
+&i2c1 {
+	cust_accel@6a {
+		compatible = "mediatek,lsm6dse-acc";
+		direction = <4>;
+	};
+
+	cust_gyro@6c {
+		compatible = "mediatek,lsm6dse-gyro";
+		direction = <4>;
+	};
+
+	cust_mag@c {
+		direction = <6>;
+	};
+};
+
+//&i2c3 {
+//	cust_mag@c {
+//		direction = <6>;
+//	};
+//};

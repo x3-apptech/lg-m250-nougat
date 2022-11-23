@@ -1,0 +1,5 @@
+include lv7_common_defconfig
+include lv7_debug_defconfig
+include lv7_skt_kr_common_defconfig
+
+
